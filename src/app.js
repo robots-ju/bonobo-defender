@@ -16,14 +16,14 @@ let game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('three', 'img/Image_Flat/Grass/Grass_Three.png');
+    this.load.image('tree', 'img/Image_Flat/Grass/Grass_Tree.png');
     this.load.image('grass-simple', 'img/Image_Flat/Grass/Grass_Simple.png');
     this.load.image('player', 'img/Image_Flat/Personnages/Bonobo/BONOBO.png');
     this.load.image('grass-puddle-small', 'img/Image_Flat/Grass/Grass_puddle_small.png');
 }
 
 function create () {
-    this.add.image(64,64,'three');
+    this.add.image(64,64,'tree');
     this.add.image(64,64,'player').setScale(0.125);
     this.add.image(192,64,'grass-simple');
     this.add.image(320,64,'grass-puddle-small')
