@@ -22,8 +22,8 @@ function preload ()
 function create () {
     this.add.image(64,64,'three');
     this.add.image(64,64,'player').setScale(0.125);
-    this.add.image(191,64,'grass-simple');
-    this.add.image(318,64,'grass-puddle-small')
+    this.add.image(192,64,'grass-simple');
+    this.add.image(320,64,'grass-puddle-small')
         /*let player = game.add.sprite(32, game.world.height - 150, 'player');
 
     //  We need to enable physics on the player
