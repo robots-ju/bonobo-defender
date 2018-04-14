@@ -13,7 +13,7 @@ let game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('grass-simple', 'img/Image Flat/Grass/GrassSimple.png');
+    this.load.image('grass-simple', 'img/Image Flat/Grass/Grass_Simple.png');
 
 
 }
