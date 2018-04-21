@@ -35,7 +35,9 @@ function create () {
     this.add.image(64,64,'three');
     this.add.image(64,64,'bonobo').setScale(0.125);
     this.add.image(192,64,'grass-simple');
-    this.add.image(320,64,'grass-puddle-small')
+    this.add.image(320,64,'grass-puddle-small');
+    bonobo.body.setGravityY(300);
+    this.physics.add.collider(bonobo, platforms);
         /*let player = game.add.sprite(32, game.world.height - 150, 'player');
 
     this.add.image(64,64,'three');
@@ -50,23 +52,25 @@ function create () {
 
 
 function update (){
-    let cursors = game.input.keyboard.createCursorKeys();
 
-    if (cursors.left.isDown){
-        bonobo.setPosition(64,0,0,0)
+    if (cursors.left.isDown)
+    {
+        bonobo.setVelocityX(-64);
     }
-
-    else if (cursors.right.isDown){
-        bonobo.setPosition(-64,0,0,0);
+    else if (cursors.right.isDown)
+    {
+        bonobo.setVelocityX(64);
     }
-
-    else {
+    else
+    {
         bonobo.setVelocityX(0);
+
     }
-    if (cursors.up.isDown && bonobo.body.touching.down) {
+
+    if (cursors.up.isDown && player.body.touching.down)
+    {
         bonobo.setVelocityY(-330);
     }
 }
-
 
 
