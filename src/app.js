@@ -53,6 +53,7 @@ function create () {
 
 }
 
+<<<<<<< HEAD
 
 function update (){
 
@@ -77,3 +78,8 @@ function update (){
 }
 
 
+=======
+function update ()
+{
+}
+>>>>>>> aed3129e9e868a682f86aa8acff2362b91eaf4d8
