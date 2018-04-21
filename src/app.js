@@ -14,6 +14,7 @@ let cursors = game.input.keyboard.createCursorKeys();
 let bonobo;
 
 function preload ()
+
 {
     this.load.image('bonobo', 'img/Image_Flat/Personnages/Bonobo/Bonobo.png');
     this.load.image('three', 'img/Image_Flat/Grass/Grass_Tree.png');
@@ -31,6 +32,11 @@ function preload ()
 }
 
 function create () {
+    this.add.image(64,64,'three');
+    this.add.image(64,64,'bonobo').setScale(0.125);
+    this.add.image(192,64,'grass-simple');
+    this.add.image(320,64,'grass-puddle-small')
+        /*let player = game.add.sprite(32, game.world.height - 150, 'player');
 
     this.add.image(64,64,'three');
     this.add.image(192,64,'grass-simple');
