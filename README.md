@@ -22,3 +22,22 @@ Projet du groupe avancé Robots-Ju
  2. `Bûcherons`
  3. `Chasseurs`
 
+## Compilation du projet
+
+Installer les dépendances:
+
+    yarn install
+
+Compiler automatiquement à chaque modification:
+
+    yarn watch
+
+Lancer un serveur de test et compiler automatiquement à chaque modification:
+
+    yarn hot
+
+Disponible sur http://localhost:8080
+
+Compiler les resources optimisées:
+
+    yarn production
