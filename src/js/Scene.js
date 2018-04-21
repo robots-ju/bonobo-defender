@@ -8,13 +8,16 @@ export default class Scene extends Phaser.Scene {
         this.cursors = null;
         this.banana = null;
         this.peutTirer = true;
+        this.score = 0;
+        this.three = null;
+
     }
 
     preload() {
         this.load.image('bonobo', 'img/Image_Flat/Personnages/Bonobo/Bonobo.png');
         this.load.image('banana', 'img/Image_Flat/Personnages/Bonobo/Banana.png')
         this.load.image('banana_charged', 'img/Image_Flat/Personnages/Bonobo/ChargedBanana.png')
-        this.load.image('three', 'img/Image_Flat/Grass/Grass_Tree.png');
+        this.load.image('three', 'img/Image_Flat/Vegeatation/Grass_Tree.png');
         this.load.image('grass-simple', 'img/Image_Flat/Grass/Grass_Simple.png');
         this.load.image('grass-puddle-small', 'img/Image_Flat/Grass/Grass_puddle_small.png');
         this.load.image('grass-puddle-medium', 'img/Image_Flat/Grass/Grass_puddle_medium.png');
@@ -30,7 +33,7 @@ export default class Scene extends Phaser.Scene {
     create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
-        this.add.image(64, 64, 'three');
+        this.three = this.physics.add.sprite(64, 64, 'three');
         this.add.image(192, 64, 'grass-simple');
         this.add.image(320, 64, 'grass-puddle-small');
     }
@@ -62,6 +65,10 @@ export default class Scene extends Phaser.Scene {
                 this.peutTirer = true;
               }, 1000);
         } else {}
+
+        if (this.three.y == this.banana.y && this.three.x == this.banana.x) {
+            console.log('touché');
+        }
 
     }
 }
