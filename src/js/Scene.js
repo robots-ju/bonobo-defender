@@ -6,7 +6,7 @@ export default class Scene extends Phaser.Scene {
 
         this.bonobo = null;
         this.cursors = null;
-        this.banana = null;
+        /*this.banana = null;*/
         this.peutTirer = true;
         this.score = 0;
         this.grassTree = null;
@@ -229,18 +229,18 @@ export default class Scene extends Phaser.Scene {
         } else {
             this.bonobo.setVelocityY(0);
         }
+    }
+}
 
-        if (this.cursors.space.isDown && this.peutTirer) {
+/*if (this.cursors.space.isDown && this.peutTirer) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.peutTirer = false;
             window.setTimeout( () => {
                 this.peutTirer = true;
               }, 1000);
 
-
-            }
-         if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
+            if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
             console.log('Touché !!');
-        }    
-    }
-}
+            }
+         
+        }*/
