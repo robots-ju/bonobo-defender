@@ -45,133 +45,185 @@ export default class Scene extends Phaser.Scene {
         
         this.grassTree = this.physics.add.sprite(64, 64, 'grass-tree')
         /*Génération: */
-        
+        var grass = ""
+            function generation() {
+                var nbr = Math.floor(Math.random() * Math.floor(14));
+                switch (nbr) {
+                    case 0:
+                        grass = "grass-simple"
+                        break;
+                    case 1:
+                        grass = "grass-simple"
+                        break;
+                    case 2:
+                        grass = "grass-puddle-medium"
+                        break;
+                    case 3:
+                        grass = "grass-simple"
+                        break;
+                    case 4:
+                        grass = "grass-bush-small"
+                        break;
+                    case 5:
+                        grass = "grass-bush-medium"
+                        break;
+                    case 6:
+                        grass = "grass-simple"
+                        break;
+                    case 7:
+                        grass = "grass-stone-small"
+                        break;
+                    case 8:
+                        grass = "grass-stone-medium"
+                        break;
+                    case 9:
+                        grass = "grass-simple"
+                        break;
+                    case 10:
+                        grass = "grass-simple"
+                        break;
+                    case 11:
+                        grass = "grass-simple"
+                        break;
+                    case 12:
+                        grass = "grass-simple"
+                        break;
+                    case 13:
+                        grass = "grass-simple"
+                        break;
+                    case 14:
+                        grass = "grass-simple"
+                        break;
+                }
+
+                return grass
+            }    
         
         /*1er Ligne*/
-        this.add.image(64, 64, 'grass-simple');
-        this.add.image(192, 64, 'grass-simple');
-        this.add.image(320, 64, 'grass-simple');
-        this.add.image(448, 64, 'grass-simple');
-        this.add.image(576, 64, 'grass-simple');
-        this.add.image(704, 64, 'grass-simple');
-        this.add.image(832, 64, 'grass-simple');
-        this.add.image(960, 64, 'grass-simple');
-        this.add.image(1088, 64, 'grass-simple');
-        this.add.image(1216, 64, 'grass-simple');
-        this.add.image(1344, 64, 'grass-simple');
-        this.add.image(1472, 64, 'grass-simple');
-        this.add.image(1600, 64, 'grass-simple');
-        this.add.image(1728, 64, 'grass-simple');
-        this.add.image(1856, 64, 'grass-simple');
-        this.add.image(1984, 64, 'grass-simple');
+        this.add.image(64, 64, generation());
+        this.add.image(192, 64, generation());
+        this.add.image(320, 64, generation());
+        this.add.image(448, 64, generation());
+        this.add.image(576, 64, generation());
+        this.add.image(704, 64, generation());
+        this.add.image(832, 64, generation());
+        this.add.image(960, 64, generation());
+        this.add.image(1088, 64, generation());
+        this.add.image(1216, 64, generation());
+        this.add.image(1344, 64, generation());
+        this.add.image(1472, 64, generation());
+        this.add.image(1600, 64, generation());
+        this.add.image(1728, 64, generation());
+        this.add.image(1856, 64, generation());
+        this.add.image(1984, 64, generation());
         
         /*2eme Ligne*/
-        this.add.image(64, 192, 'grass-simple');
-        this.add.image(192, 192, 'grass-simple');
-        this.add.image(320, 192, 'grass-simple');
-        this.add.image(448, 192, 'grass-simple');
-        this.add.image(576, 192, 'grass-simple');
-        this.add.image(704, 192, 'grass-simple');
-        this.add.image(832, 192, 'grass-simple');
-        this.add.image(960, 192, 'grass-simple');
-        this.add.image(1088, 192, 'grass-simple');
-        this.add.image(1216, 192, 'grass-simple');
-        this.add.image(1344, 192, 'grass-simple');
-        this.add.image(1472, 192, 'grass-simple');
-        this.add.image(1600, 192, 'grass-simple');
-        this.add.image(1728, 192, 'grass-simple');
-        this.add.image(1856, 192, 'grass-simple');
-        this.add.image(1984, 192, 'grass-simple');
+        this.add.image(64, 192, generation());
+        this.add.image(192, 192, generation());
+        this.add.image(320, 192, generation());
+        this.add.image(448, 192, generation());
+        this.add.image(576, 192, generation());
+        this.add.image(704, 192, generation());
+        this.add.image(832, 192, generation());
+        this.add.image(960, 192, generation());
+        this.add.image(1088, 192, generation());
+        this.add.image(1216, 192, generation());
+        this.add.image(1344, 192, generation());
+        this.add.image(1472, 192, generation());
+        this.add.image(1600, 192, generation());
+        this.add.image(1728, 192, generation());
+        this.add.image(1856, 192, generation());
+        this.add.image(1984, 192, generation());
         
         /*3eme Ligne*/
-        this.add.image(64, 320, 'grass-simple');
-        this.add.image(192, 320, 'grass-simple');
-        this.add.image(320, 320, 'grass-simple');
-        this.add.image(448, 320, 'grass-simple');
-        this.add.image(576, 320, 'grass-simple');
-        this.add.image(704, 320, 'grass-simple');
-        this.add.image(832, 320, 'grass-simple');
-        this.add.image(960, 320, 'grass-simple');
-        this.add.image(1088, 320, 'grass-simple');
-        this.add.image(1216, 320, 'grass-simple');
-        this.add.image(1344, 320, 'grass-simple');
-        this.add.image(1472, 320, 'grass-simple');
-        this.add.image(1600, 320, 'grass-simple');
-        this.add.image(1728, 320, 'grass-simple');
-        this.add.image(1856, 320, 'grass-simple');
-        this.add.image(1984, 320, 'grass-simple');
+        this.add.image(64, 320, generation());
+        this.add.image(192, 320, generation());
+        this.add.image(320, 320, generation());
+        this.add.image(448, 320, generation());
+        this.add.image(576, 320, generation());
+        this.add.image(704, 320, generation());
+        this.add.image(832, 320, generation());
+        this.add.image(960, 320, generation());
+        this.add.image(1088, 320, generation());
+        this.add.image(1216, 320, generation());
+        this.add.image(1344, 320, generation());
+        this.add.image(1472, 320, generation());
+        this.add.image(1600, 320, generation());
+        this.add.image(1728, 320, generation());
+        this.add.image(1856, 320, generation());
+        this.add.image(1984, 320, generation());
         
         /*4eme Ligne*/
-        this.add.image(64, 448, 'grass-simple');
-        this.add.image(192, 448, 'grass-simple');
-        this.add.image(320, 448, 'grass-simple');
-        this.add.image(448, 448, 'grass-simple');
-        this.add.image(576, 448, 'grass-simple');
-        this.add.image(704, 448, 'grass-simple');
-        this.add.image(832, 448, 'grass-simple');
-        this.add.image(960, 448, 'grass-simple');
-        this.add.image(1088, 448, 'grass-simple');
-        this.add.image(1216, 448, 'grass-simple');
-        this.add.image(1344, 448, 'grass-simple');
-        this.add.image(1472, 448, 'grass-simple');
-        this.add.image(1600, 448, 'grass-simple');
-        this.add.image(1728, 448, 'grass-simple');
-        this.add.image(1856, 448, 'grass-simple');
-        this.add.image(1984, 448, 'grass-simple');
+        this.add.image(64, 448, generation());
+        this.add.image(192, 448, generation());
+        this.add.image(320, 448, generation());
+        this.add.image(448, 448, generation());
+        this.add.image(576, 448, generation());
+        this.add.image(704, 448, generation());
+        this.add.image(832, 448, generation());
+        this.add.image(960, 448, generation());
+        this.add.image(1088, 448, generation());
+        this.add.image(1216, 448, generation());
+        this.add.image(1344, 448, generation());
+        this.add.image(1472, 448, generation());
+        this.add.image(1600, 448, generation());
+        this.add.image(1728, 448, generation());
+        this.add.image(1856, 448, generation());
+        this.add.image(1984, 448, generation());
         
         /*5eme Ligne*/
-        this.add.image(64, 576, 'grass-simple');
-        this.add.image(192, 576, 'grass-simple');
-        this.add.image(320, 576, 'grass-simple');
-        this.add.image(448, 576, 'grass-simple');
-        this.add.image(576, 576, 'grass-simple');
-        this.add.image(704, 576, 'grass-simple');
-        this.add.image(832, 576, 'grass-simple');
-        this.add.image(960, 576, 'grass-simple');
-        this.add.image(1088, 576, 'grass-simple');
-        this.add.image(1216, 576, 'grass-simple');
-        this.add.image(1344, 576, 'grass-simple');
-        this.add.image(1472, 576, 'grass-simple');
-        this.add.image(1600, 576, 'grass-simple');
-        this.add.image(1728, 576, 'grass-simple');
-        this.add.image(1856, 576, 'grass-simple');
-        this.add.image(1984, 576, 'grass-simple');
+        this.add.image(64, 576, generation());
+        this.add.image(192, 576, generation());
+        this.add.image(320, 576, generation());
+        this.add.image(448, 576, generation());
+        this.add.image(576, 576, generation());
+        this.add.image(704, 576, generation());
+        this.add.image(832, 576, generation());
+        this.add.image(960, 576, generation());
+        this.add.image(1088, 576, generation());
+        this.add.image(1216, 576, generation());
+        this.add.image(1344, 576, generation());
+        this.add.image(1472, 576, generation());
+        this.add.image(1600, 576, generation());
+        this.add.image(1728, 576, generation());
+        this.add.image(1856, 576, generation());
+        this.add.image(1984, 576, generation());
         
         /*6eme Ligne*/
-        this.add.image(64, 704, 'grass-simple');
-        this.add.image(192, 704, 'grass-simple');
-        this.add.image(320, 704, 'grass-simple');
-        this.add.image(448, 704, 'grass-simple');
-        this.add.image(576, 704, 'grass-simple');
-        this.add.image(704, 704, 'grass-simple');
-        this.add.image(832, 704, 'grass-simple');
-        this.add.image(960, 704, 'grass-simple');
-        this.add.image(1088, 704, 'grass-simple');
-        this.add.image(1216, 704, 'grass-simple');
-        this.add.image(1344, 704, 'grass-simple');
-        this.add.image(1472, 704, 'grass-simple');
-        this.add.image(1600, 704, 'grass-simple');
-        this.add.image(1728, 704, 'grass-simple');
-        this.add.image(1856, 704, 'grass-simple');
-        this.add.image(1984, 704, 'grass-simple');
+        this.add.image(64, 704, generation());
+        this.add.image(192, 704, generation());
+        this.add.image(320, 704, generation());
+        this.add.image(448, 704, generation());
+        this.add.image(576, 704, generation());
+        this.add.image(704, 704, generation());
+        this.add.image(832, 704, generation());
+        this.add.image(960, 704, generation());
+        this.add.image(1088, 704, generation());
+        this.add.image(1216, 704, generation());
+        this.add.image(1344, 704, generation());
+        this.add.image(1472, 704, generation());
+        this.add.image(1600, 704, generation());
+        this.add.image(1728, 704, generation());
+        this.add.image(1856, 704, generation());
+        this.add.image(1984, 704, generation());
         
         /*7eme Ligne*/
-        this.add.image(64, 832, 'grass-simple');
-        this.add.image(192, 832, 'grass-simple');
-        this.add.image(320, 832, 'grass-simple');
-        this.add.image(448, 832, 'grass-simple');
-        this.add.image(576, 832, 'grass-simple');
-        this.add.image(704, 832, 'grass-simple');
-        this.add.image(832, 832, 'grass-simple');
-        this.add.image(960, 832, 'grass-simple');
-        this.add.image(1088, 832, 'grass-simple');
-        this.add.image(1216, 832, 'grass-simple');
-        this.add.image(1344, 832, 'grass-simple');
-        this.add.image(1472, 832, 'grass-simple');
-        this.add.image(1600, 832, 'grass-simple');
-        this.add.image(1728, 832, 'grass-simple');
-        this.add.image(1856, 832, 'grass-simple');
-        this.add.image(1984, 832, 'grass-simple');
+        this.add.image(64, 832, generation());
+        this.add.image(192, 832, generation());
+        this.add.image(320, 832, generation());
+        this.add.image(448, 832, generation());
+        this.add.image(576, 832, generation());
+        this.add.image(704, 832, generation());
+        this.add.image(832, 832, generation());
+        this.add.image(960, 832, generation());
+        this.add.image(1088, 832, generation());
+        this.add.image(1216, 832, generation());
+        this.add.image(1344, 832, generation());
+        this.add.image(1472, 832, generation());
+        this.add.image(1600, 832, generation());
+        this.add.image(1728, 832, generation());
+        this.add.image(1856, 832, generation());
+        this.add.image(1984, 832, generation());
         
         /*8eme Ligne*/
         this.add.image(64, 960, 'grass-simple');
@@ -208,6 +260,24 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 1088, 'grass-tree');
         this.add.image(1856, 1088, 'grass-tree');
         this.add.image(1984, 1088, 'grass-tree');
+          
+        /*Trees*/
+        this.add.image(64, 1024, 'tree');
+        this.add.image(192, 1024, 'tree');
+        this.add.image(320, 1024, 'tree');
+        this.add.image(448, 1024, 'tree');
+        this.add.image(576, 1024, 'tree');
+        this.add.image(704, 1024, 'tree');
+        this.add.image(832, 1024, 'tree');
+        this.add.image(960, 1024, 'tree');
+        this.add.image(1088, 1024, 'tree');
+        this.add.image(1216, 1024, 'tree');
+        this.add.image(1344, 1024, 'tree');
+        this.add.image(1472, 1024, 'tree');
+        this.add.image(1600, 1024, 'tree');
+        this.add.image(1728, 1024, 'tree');
+        this.add.image(1856, 1024, 'tree');
+        this.add.image(1984, 1024, 'tree');
     }
 
     update() {
