@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import Partie from './Partie';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -11,6 +12,7 @@ export default class Scene extends Phaser.Scene {
         this.score = 0;
         this.grassTree = null;
 
+        this.partieEnCours = new Partie();
     }
 
     preload() {
