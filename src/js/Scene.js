@@ -34,6 +34,8 @@ export default class Scene extends Phaser.Scene {
         this.load.image('grass-stone-medium', 'img/Image_Flat/Grass/Grass_stone_medium.png');
         this.load.image('grass-stone-small', 'img/Image_Flat/Grass/Grass_stone_small.png');
         this.load.image('heart', 'img/heart.png');
+        this.load.image('bucheron', 'img/Image_Flat/Personnages/Bucheron/Bucheron.png');
+        this.load.image('chasseur', 'img/Image_Flat/Personnages/Chasseur/Chasseur.png');
     }
 
     addPhysicsSprite(sprite) {
