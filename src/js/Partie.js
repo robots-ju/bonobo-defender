@@ -9,6 +9,10 @@ export default class Partie {
         return this.vie > 0;
     }
 
+    vieDuJoueur() {
+        return this.vie;
+    }
+
     peutAttaquerCorpsACorps() {
         return this.attaqueCorpsACorpsPossible;
     }
