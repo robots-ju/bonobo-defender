@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import Partie from './Partie';
 import Interface from './Interface';
+import Bonobo from './sprites/Bonobo';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -16,8 +17,8 @@ export default class Scene extends Phaser.Scene {
 
     preload() {
         this.load.image('bonobo', 'img/Image_Flat/Personnages/Bonobo/Bonobo.png');
-        this.load.image('banana', 'img/Image_Flat/Personnages/Bonobo/Banana.png')
-        this.load.image('banana_charged', 'img/Image_Flat/Personnages/Bonobo/ChargedBanana.png')
+        this.load.image('banana', 'img/Image_Flat/Personnages/Bonobo/Banana.png');
+        this.load.image('banana_charged', 'img/Image_Flat/Personnages/Bonobo/ChargedBanana.png');
         this.load.image('tree', 'img/Image_Flat/Vegeatation/Tree.png');
         this.load.image('grass-simple', 'img/Image_Flat/Grass/Grass_Simple.png');
         this.load.image('grass-tree', 'img/Image_Flat/Grass/Grass_Tree.png');
@@ -33,9 +34,18 @@ export default class Scene extends Phaser.Scene {
         this.load.image('heart', 'img/heart.png');
     }
 
+    addPhysicsSprite(sprite) {
+        this.sys.displayList.add(sprite);
+        this.sys.updateList.add(sprite);
+
+        this.physics.world.enableBody(sprite, /*CONST.DYNAMIC_BODY*/ 0);
+
+        return sprite;
+    }
+
     create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
-        this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
+        this.bonobo = this.addPhysicsSprite(new Bonobo(this)).setPosition(64, 64);
 
         /*
          pour descendre d'une case : y = y + 128
