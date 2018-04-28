@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 import Partie from './Partie';
+import Interface from './Interface'
+import { S_IFMT, ENGINE_METHOD_DIGESTS } from 'constants';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -13,6 +15,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
+        this.Interface = new Interface(this.partieEnCours,this);
     }
 
     preload() {
@@ -31,6 +34,7 @@ export default class Scene extends Phaser.Scene {
         this.load.image('grass-stone-large', 'img/Image_Flat/Grass/Grass_stone_large.png');
         this.load.image('grass-stone-medium', 'img/Image_Flat/Grass/Grass_stone_medium.png');
         this.load.image('grass-stone-small', 'img/Image_Flat/Grass/Grass_stone_small.png');
+        this.load.image('heart','img/heart.png')
     }
 
       create() {
@@ -284,6 +288,8 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 1024, 'tree');
         this.add.image(1856, 1024, 'tree');
         this.add.image(1984, 1024, 'tree');
+        console.log(this.sys.canvas.height)
+
     }
 
     update() {
@@ -315,5 +321,6 @@ export default class Scene extends Phaser.Scene {
                 this.peutTirer = true;
               }, 1000);
         }
+        this.Interface.afficherInterface();
     }
 }
