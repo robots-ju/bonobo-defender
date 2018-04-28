@@ -314,12 +314,9 @@ export default class Scene extends Phaser.Scene {
                 this.peutTirer = true;
               }, 1000);
         }
-<<<<<<< HEAD
         if(this.partieEnCours.joueurEstEnVie() === true) {
             console.log(this.sys.canvas.height-200,this.sys.canvas.width-200)
             this.add.image(this.sys.canvas.width-100,this.sys.canvas.height-100,'heart').setScale(0.3)
         }
-=======
->>>>>>> 2d19a13b659f04220380b18b6067eda7af045cf1
     }
 }
