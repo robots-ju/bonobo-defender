@@ -41,10 +41,6 @@ export default class Scene extends Phaser.Scene {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
 
-
-
-
-
         /*
         pour descendre d'une case : y = y + 128
         pour monter d'une case : y = y - 128
