@@ -1,5 +1,7 @@
 import Phaser from 'phaser';
 import Partie from './Partie';
+import Interface from './Interface'
+import { S_IFMT, ENGINE_METHOD_DIGESTS } from 'constants';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -13,6 +15,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
+        this.Interface = new Interface(this.partieEnCours,this);
     }
 
     preload() {
@@ -31,12 +34,12 @@ export default class Scene extends Phaser.Scene {
         this.load.image('grass-stone-large', 'img/Image_Flat/Grass/Grass_stone_large.png');
         this.load.image('grass-stone-medium', 'img/Image_Flat/Grass/Grass_stone_medium.png');
         this.load.image('grass-stone-small', 'img/Image_Flat/Grass/Grass_stone_small.png');
+        this.load.image('heart','img/heart.png')
     }
 
       create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
-
         /*
         pour descendre d'une case : y = y + 128
         pour monter d'une case : y = y - 128
@@ -280,11 +283,13 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 1024, 'tree');
         this.add.image(1856, 1024, 'tree');
         this.add.image(1984, 1024, 'tree');
+        console.log(this.sys.canvas.height)
+
     }
 
     update() {
         const BONOBO_SPEED_LEFT_RIGHT =256;
-        const BONOBO_SPEED_UP_DOWN =128;
+        const BONOBO_SPEED_UP_DOWN =256;
 
         if (this.cursors.left.isDown) {
             this.bonobo.setVelocityX(-BONOBO_SPEED_LEFT_RIGHT);
@@ -310,10 +315,7 @@ export default class Scene extends Phaser.Scene {
             window.setTimeout( () => {
                 this.peutTirer = true;
               }, 1000);
-
-
-
         }
-
+        this.Interface.afficherInterface();
     }
 }
