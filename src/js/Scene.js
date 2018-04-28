@@ -12,7 +12,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
-        this.Interface = new Interface(this.partieEnCours,this);
+        this.interface = new Interface(this.partieEnCours,this);
     }
 
     preload() {
@@ -310,6 +310,7 @@ export default class Scene extends Phaser.Scene {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.partieEnCours.aUtiliseLanceBananes();
         }
+        this.interface.afficherInterface();
     }
 }
 
