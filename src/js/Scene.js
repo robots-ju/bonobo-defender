@@ -14,7 +14,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
-        this.Interface = new Interface(this.partieEnCours, this);
+        this.interface = new Interface(this.partieEnCours, this);
     }
 
     preload() {
@@ -326,6 +326,7 @@ export default class Scene extends Phaser.Scene {
         }
 
         this.chasseurs.sceneUpdate(this.bonobo, this.partieEnCours);
+        this.interface.afficherInterface();
     }
 }
 
