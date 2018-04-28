@@ -2,6 +2,7 @@ import Phaser from 'phaser';
 import Partie from './Partie';
 import Interface from './Interface';
 import Bonobo from './sprites/Bonobo';
+import ChasseurSquad from './groups/ChasseurSquad';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -9,6 +10,7 @@ export default class Scene extends Phaser.Scene {
 
         this.bonobo = null;
         this.cursors = null;
+        this.chasseurs = null;
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
@@ -46,6 +48,9 @@ export default class Scene extends Phaser.Scene {
     create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.addPhysicsSprite(new Bonobo(this)).setPosition(64, 64);
+
+        this.chasseurs = new ChasseurSquad(this);
+        this.sys.updateList.add(this.chasseurs);
 
         /*
          pour descendre d'une case : y = y + 128
@@ -319,6 +324,8 @@ export default class Scene extends Phaser.Scene {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.partieEnCours.aUtiliseLanceBananes();
         }
+
+        this.chasseurs.sceneUpdate(this.bonobo, this.partieEnCours);
     }
 }
 

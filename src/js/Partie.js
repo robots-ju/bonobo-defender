@@ -3,6 +3,7 @@ export default class Partie {
         this.vie = 8;
         this.attaqueCorpsACorpsPossible = true;
         this.attaqueLanceBananesPossible = true;
+        this.prochaineVague = true;
     }
 
     joueurEstEnVie() {
@@ -44,5 +45,21 @@ export default class Partie {
         window.setTimeout(() => {
             this.attaqueLanceBananesPossible = true;
         }, 1000);
+    }
+
+    prochaineVaguePrete() {
+        return this.prochaineVague;
+    }
+
+    aLanceVague() {
+        this.prochaineVague = false;
+
+        setTimeout(() => {
+            this.prochaineVague = true;
+        }, 1000);
+    }
+
+    aTueEnemy() {
+        // TODO: ne fait rien pour l'instant
     }
 }
