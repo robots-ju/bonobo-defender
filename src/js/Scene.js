@@ -1,7 +1,6 @@
 import Phaser from 'phaser';
 import Partie from './Partie';
-import Interface from './Interface'
-import { S_IFMT, ENGINE_METHOD_DIGESTS } from 'constants';
+import Interface from './Interface';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -12,7 +11,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
-        this.Interface = new Interface(this.partieEnCours,this);
+        this.Interface = new Interface(this.partieEnCours, this);
     }
 
     preload() {
@@ -31,76 +30,77 @@ export default class Scene extends Phaser.Scene {
         this.load.image('grass-stone-large', 'img/Image_Flat/Grass/Grass_stone_large.png');
         this.load.image('grass-stone-medium', 'img/Image_Flat/Grass/Grass_stone_medium.png');
         this.load.image('grass-stone-small', 'img/Image_Flat/Grass/Grass_stone_small.png');
-        this.load.image('heart','img/heart.png')
+        this.load.image('heart', 'img/heart.png');
     }
 
-      create() {
+    create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
 
         /*
-        pour descendre d'une case : y = y + 128
-        pour monter d'une case : y = y - 128
-        pour aller a droite d'une case: x = x + 128
-        pour aller a gauche d'une case: x = x - 128
+         pour descendre d'une case : y = y + 128
+         pour monter d'une case : y = y - 128
+         pour aller a droite d'une case: x = x + 128
+         pour aller a gauche d'une case: x = x - 128
 
-        pour placer un arbre: caseDeArbre = CaseDeGrassTree - 64*/
+         pour placer un arbre: caseDeArbre = CaseDeGrassTree - 64*/
 
-        this.grassTree = this.physics.add.sprite(64, 64, 'grass-tree')
+        this.grassTree = this.physics.add.sprite(64, 64, 'grass-tree');
         /*Génération: */
-        var grass = ""
-            function generation() {
-                var nbr = Math.floor(Math.random() * Math.floor(14));
-                switch (nbr) {
-                    case 0:
-                        grass = "grass-simple"
-                        break;
-                    case 1:
-                        grass = "grass-simple"
-                        break;
-                    case 2:
-                        grass = "grass-puddle-medium"
-                        break;
-                    case 3:
-                        grass = "grass-simple"
-                        break;
-                    case 4:
-                        grass = "grass-bush-small"
-                        break;
-                    case 5:
-                        grass = "grass-bush-medium"
-                        break;
-                    case 6:
-                        grass = "grass-simple"
-                        break;
-                    case 7:
-                        grass = "grass-stone-small"
-                        break;
-                    case 8:
-                        grass = "grass-stone-medium"
-                        break;
-                    case 9:
-                        grass = "grass-simple"
-                        break;
-                    case 10:
-                        grass = "grass-simple"
-                        break;
-                    case 11:
-                        grass = "grass-simple"
-                        break;
-                    case 12:
-                        grass = "grass-simple"
-                        break;
-                    case 13:
-                        grass = "grass-simple"
-                        break;
-                    case 14:
-                        grass = "grass-simple"
-                        break;
-                }
+        let grass = "";
 
-                return grass
+        function generation() {
+            const nbr = Math.floor(Math.random() * Math.floor(14));
+            switch (nbr) {
+                case 0:
+                    grass = "grass-simple";
+                    break;
+                case 1:
+                    grass = "grass-simple";
+                    break;
+                case 2:
+                    grass = "grass-puddle-medium";
+                    break;
+                case 3:
+                    grass = "grass-simple";
+                    break;
+                case 4:
+                    grass = "grass-bush-small";
+                    break;
+                case 5:
+                    grass = "grass-bush-medium";
+                    break;
+                case 6:
+                    grass = "grass-simple";
+                    break;
+                case 7:
+                    grass = "grass-stone-small";
+                    break;
+                case 8:
+                    grass = "grass-stone-medium";
+                    break;
+                case 9:
+                    grass = "grass-simple";
+                    break;
+                case 10:
+                    grass = "grass-simple";
+                    break;
+                case 11:
+                    grass = "grass-simple";
+                    break;
+                case 12:
+                    grass = "grass-simple";
+                    break;
+                case 13:
+                    grass = "grass-simple";
+                    break;
+                case 14:
+                    grass = "grass-simple";
+                    break;
             }
+
+            return grass
+        }
 
         /*1er Ligne*/
         this.add.image(64, 64, generation());
@@ -282,13 +282,12 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 1024, 'tree');
         this.add.image(1856, 1024, 'tree');
         this.add.image(1984, 1024, 'tree');
-        console.log(this.sys.canvas.height)
 
     }
 
     update() {
-        const BONOBO_SPEED_LEFT_RIGHT =256;
-        const BONOBO_SPEED_UP_DOWN =256;
+        const BONOBO_SPEED_LEFT_RIGHT = 256;
+        const BONOBO_SPEED_UP_DOWN = 256;
 
         if (this.cursors.left.isDown) {
             this.bonobo.setVelocityX(-BONOBO_SPEED_LEFT_RIGHT);
@@ -306,7 +305,7 @@ export default class Scene extends Phaser.Scene {
             this.bonobo.setVelocityY(0);
         }
 
-        if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes ()) {
+        if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes()) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.partieEnCours.aUtiliseLanceBananes();
         }
