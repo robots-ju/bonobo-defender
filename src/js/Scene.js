@@ -284,7 +284,7 @@ export default class Scene extends Phaser.Scene {
 
     update() {
         const BONOBO_SPEED_LEFT_RIGHT =256;
-        const BONOBO_SPEED_UP_DOWN =128;
+        const BONOBO_SPEED_UP_DOWN =256;
 
         if (this.cursors.left.isDown) {
             this.bonobo.setVelocityX(-BONOBO_SPEED_LEFT_RIGHT);
@@ -310,10 +310,6 @@ export default class Scene extends Phaser.Scene {
             window.setTimeout( () => {
                 this.peutTirer = true;
               }, 1000);
-
-
-
         }
-
     }
 }
