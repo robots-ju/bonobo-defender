@@ -34,15 +34,15 @@ export default class Scene extends Phaser.Scene {
       create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
-        
+
         /*
         pour descendre d'une case : y = y + 128
         pour monter d'une case : y = y - 128
         pour aller a droite d'une case: x = x + 128
         pour aller a gauche d'une case: x = x - 128
-        
+
         pour placer un arbre: caseDeArbre = CaseDeGrassTree - 64*/
-        
+
         this.grassTree = this.physics.add.sprite(64, 64, 'grass-tree')
         /*Génération: */
         var grass = ""
@@ -97,8 +97,8 @@ export default class Scene extends Phaser.Scene {
                 }
 
                 return grass
-            }    
-        
+            }
+
         /*1er Ligne*/
         this.add.image(64, 64, generation());
         this.add.image(192, 64, generation());
@@ -116,7 +116,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 64, generation());
         this.add.image(1856, 64, generation());
         this.add.image(1984, 64, generation());
-        
+
         /*2eme Ligne*/
         this.add.image(64, 192, generation());
         this.add.image(192, 192, generation());
@@ -134,7 +134,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 192, generation());
         this.add.image(1856, 192, generation());
         this.add.image(1984, 192, generation());
-        
+
         /*3eme Ligne*/
         this.add.image(64, 320, generation());
         this.add.image(192, 320, generation());
@@ -152,7 +152,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 320, generation());
         this.add.image(1856, 320, generation());
         this.add.image(1984, 320, generation());
-        
+
         /*4eme Ligne*/
         this.add.image(64, 448, generation());
         this.add.image(192, 448, generation());
@@ -170,7 +170,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 448, generation());
         this.add.image(1856, 448, generation());
         this.add.image(1984, 448, generation());
-        
+
         /*5eme Ligne*/
         this.add.image(64, 576, generation());
         this.add.image(192, 576, generation());
@@ -188,7 +188,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 576, generation());
         this.add.image(1856, 576, generation());
         this.add.image(1984, 576, generation());
-        
+
         /*6eme Ligne*/
         this.add.image(64, 704, generation());
         this.add.image(192, 704, generation());
@@ -206,7 +206,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 704, generation());
         this.add.image(1856, 704, generation());
         this.add.image(1984, 704, generation());
-        
+
         /*7eme Ligne*/
         this.add.image(64, 832, generation());
         this.add.image(192, 832, generation());
@@ -224,7 +224,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 832, generation());
         this.add.image(1856, 832, generation());
         this.add.image(1984, 832, generation());
-        
+
         /*8eme Ligne*/
         this.add.image(64, 960, 'grass-simple');
         this.add.image(192, 960, 'grass-simple');
@@ -242,7 +242,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 960, 'grass-simple');
         this.add.image(1856, 960, 'grass-simple');
         this.add.image(1984, 960, 'grass-simple');
-        
+
         /*9eme Ligne*/
         this.add.image(64, 1088, 'grass-tree');
         this.add.image(192, 1088, 'grass-tree');
@@ -260,7 +260,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1728, 1088, 'grass-tree');
         this.add.image(1856, 1088, 'grass-tree');
         this.add.image(1984, 1088, 'grass-tree');
-          
+
         /*Trees*/
         this.add.image(64, 1024, 'tree');
         this.add.image(192, 1024, 'tree');
@@ -299,10 +299,8 @@ export default class Scene extends Phaser.Scene {
         } else {
             this.bonobo.setVelocityY(0);
         }
-    }
-}
 
-/*if (this.cursors.space.isDown && this.peutTirer) {
+        if (this.cursors.space.isDown && this.peutTirer) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.peutTirer = false;
             /*if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
@@ -311,18 +309,9 @@ export default class Scene extends Phaser.Scene {
                 this.peutTirer = true;
               }, 1000);
 
-<<<<<<< HEAD
 
 
-            }
-        
-        }    
+        }
+
     }
 }
-=======
-            if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
-            console.log('Touché !!');
-            }
-         
-        }*/
->>>>>>> a95df4a93d38a340b048c9537c2b927647687476
