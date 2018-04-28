@@ -11,7 +11,7 @@ export default class Enemy extends Phaser.Physics.Arcade.Sprite {
     }
 
     dirigeVers(cible) {
-        const ENEMY_SPEED = 200;
+        const ENEMY_SPEED = 100;
         const MIN_DISTANCE = 50;
 
         const distanceX = cible.x - this.x;
