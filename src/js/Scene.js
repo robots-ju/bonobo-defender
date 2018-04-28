@@ -38,7 +38,6 @@ export default class Scene extends Phaser.Scene {
       create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
-
         /*
         pour descendre d'une case : y = y + 128
         pour monter d'une case : y = y - 128
@@ -288,7 +287,7 @@ export default class Scene extends Phaser.Scene {
 
     update() {
         const BONOBO_SPEED_LEFT_RIGHT =256;
-        const BONOBO_SPEED_UP_DOWN =128;
+        const BONOBO_SPEED_UP_DOWN =256;
 
         if (this.cursors.left.isDown) {
             this.bonobo.setVelocityX(-BONOBO_SPEED_LEFT_RIGHT);
@@ -314,13 +313,13 @@ export default class Scene extends Phaser.Scene {
             window.setTimeout( () => {
                 this.peutTirer = true;
               }, 1000);
-
-
-
         }
+<<<<<<< HEAD
         if(this.partieEnCours.joueurEstEnVie() === true) {
             console.log(this.sys.canvas.height-200,this.sys.canvas.width-200)
             this.add.image(this.sys.canvas.width-100,this.sys.canvas.height-100,'heart').setScale(0.3)
         }
+=======
+>>>>>>> 2d19a13b659f04220380b18b6067eda7af045cf1
     }
 }
