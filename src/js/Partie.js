@@ -32,10 +32,17 @@ export default class Partie {
     aUtiliseCorpsACorps() {
         // TODO: appliquer cooldown
         this.attaqueCorpsACorpsPossible = false;
+        window.setTimeout( () => {
+            this.attaqueCorpsACorpsPossible = true;
+        }, 1000);
+
     }
 
     aUtiliseLanceBananes() {
         // TODO: appliquer cooldown
         this.attaqueLanceBananesPossible = false;
+        window.setTimeout( () => {
+            this.attaqueLanceBananesPossible = true;
+        }, 1000);
     }
 }
