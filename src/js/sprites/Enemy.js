@@ -3,7 +3,7 @@ import Phaser from 'phaser';
 export default class Enemy extends Phaser.Physics.Arcade.Sprite {
     constructor(scene, key) {
         const x = Math.floor(Math.random() * scene.sys.game.config.width);
-        const y = Math.floor(Math.random() * scene.sys.game.config.height);
+        const y =  2;     //Math.floor(Math.random() * scene.sys.game.config.height);
 
         super(scene, x, y, key);
 
