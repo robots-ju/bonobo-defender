@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import Partie from './Partie';
+import Interface from './Interface'
 import { S_IFMT, ENGINE_METHOD_DIGESTS } from 'constants';
 
 export default class Scene extends Phaser.Scene {
@@ -14,6 +15,7 @@ export default class Scene extends Phaser.Scene {
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
+        this.Interface = new Interface(this.partieEnCours,this);
     }
 
     preload() {
@@ -314,9 +316,6 @@ export default class Scene extends Phaser.Scene {
                 this.peutTirer = true;
               }, 1000);
         }
-        if(this.partieEnCours.joueurEstEnVie() === true) {
-            console.log(this.sys.canvas.height-200,this.sys.canvas.width-200)
-            this.add.image(this.sys.canvas.width-100,this.sys.canvas.height-100,'heart').setScale(0.3)
-        }
+        this.Interface.afficherInterface();
     }
 }
