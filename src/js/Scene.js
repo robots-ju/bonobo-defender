@@ -9,9 +9,6 @@ export default class Scene extends Phaser.Scene {
 
         this.bonobo = null;
         this.cursors = null;
-        /*this.banana = null;*/
-        this.peutTirer = true;
-        this.score = 0;
         this.grassTree = null;
 
         this.partieEnCours = new Partie();
@@ -40,6 +37,7 @@ export default class Scene extends Phaser.Scene {
       create() {
         this.cursors = this.sys.game.input.keyboard.createCursorKeys();
         this.bonobo = this.physics.add.sprite(64, 64, 'bonobo').setScale(0.125).setDepth(100);
+
         /*
         pour descendre d'une case : y = y + 128
         pour monter d'une case : y = y - 128
@@ -226,6 +224,7 @@ export default class Scene extends Phaser.Scene {
         this.add.image(1344, 832, generation());
         this.add.image(1472, 832, generation());
         this.add.image(1600, 832, generation());
+
         this.add.image(1728, 832, generation());
         this.add.image(1856, 832, generation());
         this.add.image(1984, 832, generation());
@@ -307,15 +306,10 @@ export default class Scene extends Phaser.Scene {
             this.bonobo.setVelocityY(0);
         }
 
-        if (this.cursors.space.isDown && this.peutTirer) {
+        if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes ()) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
-            this.peutTirer = false;
-            /*if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
-                console.log('Touché !!');*/
-            window.setTimeout( () => {
-                this.peutTirer = true;
-              }, 1000);
+            this.partieEnCours.aUtiliseLanceBananes();
         }
-        this.Interface.afficherInterface();
     }
 }
+
