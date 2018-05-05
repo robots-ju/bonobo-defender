@@ -77,24 +77,6 @@ export default class Scene extends Phaser.Scene {
             this.bonobo.setVelocityY(0);
         }
 
-<<<<<<< HEAD
-
-            if (this.cursors.space.isDown && this.peutTirer) {
-            this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
-            this.peutTirer = false;
-            /*if (Phaser.Geom.Intersects.RectangleToRectangle(this.banana.getBounds(), this.grassTree.getBounds())) {
-                console.log('Touché !!');*/
-            window.setTimeout( () => {
-                this.peutTirer = true;
-              }, 1000);
-
-
-
-         }
-        
-    }    
-}
-=======
         if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes()) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.partieEnCours.aUtiliseLanceBananes();
@@ -105,4 +87,3 @@ export default class Scene extends Phaser.Scene {
     }
 }
 
->>>>>>> c48c58483d430c35a943c77cc0e925e1c626977a
