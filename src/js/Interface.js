@@ -20,6 +20,11 @@ export default class Interface {
                 backgroundColor: "#ffffff00"
             }
         );
+
+        if (this.partie.score() > 0){
+
+        }
+
         if (this.partie.peutAttaquerLanceBananes === true) {
 
         }

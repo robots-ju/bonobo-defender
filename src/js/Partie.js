@@ -62,7 +62,8 @@ export default class Partie {
     aTueBucheron() {
         // TODO: ne fait rien pour l'instant
 
-    }
+}
+
 
     aTueChasseur() {
         // TODO: ne fait rien pour l'instant
