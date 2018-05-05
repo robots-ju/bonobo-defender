@@ -1,3 +1,4 @@
+
 import PhysicsGroup from './PhysicsGroup';
 
 export default class EnemySquad extends PhysicsGroup {

@@ -7,6 +7,7 @@ export default class Partie {
         this.attaqueCorpsACorpsPossible = true;
         this.attaqueLanceBananesPossible = true;
         this.prochaineVague = true;
+        this.bananelance = 0;
     }
 
     joueurEstEnVie() {
@@ -48,6 +49,7 @@ export default class Partie {
         window.setTimeout(() => {
             this.attaqueLanceBananesPossible = true;
         }, 1000);
+        this.bananelance += 1;
     }
 
     prochaineVaguePrete() {
@@ -67,7 +69,12 @@ export default class Partie {
     }
 
     bananeCharged() {
-        return Math.random() > 0.8;
+        if (this.bananelance === 10) {
+            return true;
+        }else {
+            return false;
+        }
+        
     }
 
     aTueEnemy(enemy, projectile) {
