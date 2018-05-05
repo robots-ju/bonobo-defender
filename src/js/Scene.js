@@ -77,10 +77,6 @@ export default class Scene extends Phaser.Scene {
             this.bonobo.setVelocityY(0);
         }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 94d8814a75d7cd6d3119018288c49f24690d1248
         if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes()) {
             this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
             this.partieEnCours.aUtiliseLanceBananes();
@@ -90,8 +86,3 @@ export default class Scene extends Phaser.Scene {
         this.interface.afficherInterface();
     }
 }
-
-<<<<<<< HEAD
-
-=======
->>>>>>> 94d8814a75d7cd6d3119018288c49f24690d1248
