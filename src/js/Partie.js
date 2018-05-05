@@ -59,7 +59,13 @@ export default class Partie {
         }, 1000);
     }
 
-    aTueEnemy() {
+    aTueBucheron() {
         // TODO: ne fait rien pour l'instant
+
+    }
+
+    aTueChasseur() {
+        // TODO: ne fait rien pour l'instant
+
     }
 }
