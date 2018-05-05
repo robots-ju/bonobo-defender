@@ -4,6 +4,7 @@ import Interface from './Interface';
 import Bonobo from './sprites/Bonobo';
 import ChasseurSquad from './groups/ChasseurSquad';
 import Environnement from './groups/Environnement';
+import Projectiles from './groups/Projectiles';
 
 export default class Scene extends Phaser.Scene {
     constructor(game) {
@@ -12,6 +13,7 @@ export default class Scene extends Phaser.Scene {
         this.bonobo = null;
         this.cursors = null;
         this.chasseurs = null;
+        this.projectiles = null;
 
         this.partieEnCours = new Partie();
         this.interface = new Interface(this.partieEnCours, this);
@@ -54,6 +56,9 @@ export default class Scene extends Phaser.Scene {
         this.chasseurs = new ChasseurSquad(this);
         this.sys.updateList.add(this.chasseurs);
 
+        this.projectiles = new Projectiles(this);
+        this.sys.updateList.add(this.projectiles);
+
         this.sys.updateList.add(new Environnement(this));
     }
 
@@ -78,11 +83,12 @@ export default class Scene extends Phaser.Scene {
         }
 
         if (this.cursors.space.isDown && this.partieEnCours.peutAttaquerLanceBananes()) {
-            this.banana = this.physics.add.sprite(this.bonobo.x, this.bonobo.y, 'banana').setVelocityY(-512);
+            this.projectiles.fireBanane(this);
+
             this.partieEnCours.aUtiliseLanceBananes();
         }
 
-        this.chasseurs.sceneUpdate(this.bonobo, this.partieEnCours);
+        this.chasseurs.sceneUpdate(this);
         this.interface.afficherInterface();
     }
 }

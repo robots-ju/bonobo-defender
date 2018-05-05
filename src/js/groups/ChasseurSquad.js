@@ -3,20 +3,20 @@ import Chasseur from '../sprites/Chasseur';
 
 export default class ChasseurSquad extends EnemySquad {
     nouvelleVague() {
-        const count = Math.floor(Math.random() * 2);
+        const count = Math.floor(Math.random() * 4);
 
         for (let i = 0; i < count; i++) {
             this.addPhysics(new Chasseur(this.scene));
         }
     }
 
-    sceneUpdate(bonobo, partie) {
-        super.sceneUpdate(bonobo, partie);
+    sceneUpdate(scene) {
+        super.sceneUpdate(scene);
 
-        if (partie.prochaineVaguePrete()) {
+        if (scene.partieEnCours.prochaineVaguePrete()) {
             this.nouvelleVague();
 
-            partie.aLanceVague();
+            scene.partieEnCours.aLanceVague();
         }
     }
 }

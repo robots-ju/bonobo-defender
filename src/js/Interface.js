@@ -21,7 +21,7 @@ export default class Interface {
             }
         );
 
-        if (this.partie.score() > 0){
+        if (this.partie.getScore() > 0){
 
         }
 

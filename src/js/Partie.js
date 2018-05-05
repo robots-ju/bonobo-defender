@@ -1,3 +1,6 @@
+import Bucheron from './sprites/Bucheron';
+import Chasseur from './sprites/Chasseur';
+
 export default class Partie {
     constructor() {
         this.vie = 8;
@@ -56,17 +59,24 @@ export default class Partie {
 
         setTimeout(() => {
             this.prochaineVague = true;
-        }, 1000);
+        }, 10000);
     }
 
-    aTueBucheron() {
-        // TODO: ne fait rien pour l'instant
+    getScore() {
+        return 0;
+    }
 
-}
+    bananeCharged() {
+        return Math.random() > 0.8;
+    }
 
+    aTueEnemy(enemy, projectile) {
+        if (enemy instanceof Bucheron) {
+            console.log('bucheron');
+        } else if (enemy instanceof Chasseur) {
+            console.log('chasseur');
+        }
 
-    aTueChasseur() {
-        // TODO: ne fait rien pour l'instant
-
+        console.log(projectile.charged ? 'charged' : 'not charged');
     }
 }
