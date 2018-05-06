@@ -48,7 +48,7 @@ export default class Partie {
         this.attaqueLanceBananesPossible = false;
         window.setTimeout(() => {
             this.attaqueLanceBananesPossible = true;
-        }, 1000);
+        }, 300);
         this.bananelance += 1;
     }
 
