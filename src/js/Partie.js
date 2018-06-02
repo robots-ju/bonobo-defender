@@ -26,11 +26,11 @@ export default class Partie {
     }
 
     recuCoupCorps() {
-        this.vie -= 2;
+        this.vieDuJoueur -= 2;
     }
 
     recuCoupProjectile() {
-        this.vie -= 1;
+        this.vieDuJoueur -= 1;
     }
 
     aUtiliseCorpsACorps() {
